@@ -1,23 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { title, slug } from '../meta.json'
+
+import Component from '../components/SourceCodeLabelGenerator'
 ---
 
 <Layout {title} repoUrl={`https://github.com/devjam/playground-${slug}`}>
   <main>
     {/* contents start */}
-    <div class="relative flex min-h-svh flex-col items-center justify-center text-30">
-      <ul class="list-disc">
-        <li>
-          <a class="underline hover:no-underline" href={`./${slug}/alpine-example`}
-            >Alpine example</a
-          >
-        </li>
-        <li>
-          <a class="underline hover:no-underline" href={`./${slug}/react-example`}>React example</a>
-        </li>
-      </ul>
-    </div>
+    <Component client:load />
     {/* contents end */}
   </main>
 </Layout>
