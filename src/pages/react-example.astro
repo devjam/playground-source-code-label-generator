@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { title, slug } from '../meta.json'
+
+import Component from '../components/Component'
+---
+
+<Layout {title} repoUrl={`https://github.com/devjam/playground-${slug}`}>
+  <main>
+    {/* contents start */}
+    <Component client:load />
+    {/* contents end */}
+  </main>
+</Layout>
